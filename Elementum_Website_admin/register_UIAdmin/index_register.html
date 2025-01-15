@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Elementum/Admin Register</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--===============================================================================================-->
+    <link rel="icon" href="../images/Elementum-logo.png" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Lilita+One&display=swap"
+        rel="stylesheet" />
+
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!--===============================================================================================-->
+    <style>
+        /* CSS styles for the password toggle */
+        .toggle-password {
+            position: absolute;
+            right: 25px;
+            top: 12.5px;
+            cursor: pointer;
+        }
+
+        .toggle-password:hover {
+            color: #007bff;
+        }
+
+        .modal-title,
+        .modal-header {
+            text-align: center;
+        }
+    </style>
+    <script type="module">
+        import { firebaseConfig } from "../../js/firebase-config.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+        import {
+            getStorage,
+            ref as storageRef,
+            uploadBytes,
+        } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-storage.js";
+        import {
+            getDatabase,
+            ref,
+            set,
+        } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
+        import {
+            getAuth,
+            createUserWithEmailAndPassword,
+            sendEmailVerification,
+        } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js";
+
+        initializeApp(firebaseConfig);
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const registrationForm =
+                document.getElementById("registrationForm");
+            registrationForm.addEventListener("submit", function (event) {
+                registerUser(event);
+            });
+        });
+
+        // Function to display error message using SweetAlert
+        function showErrorAlert(title, message) {
+            Swal.fire({
+                icon: "error",
+                title: title,
+                text: message,
+            });
+        }
+
+        // Function to validate email format
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        // Function to validate password format
+        function validatePassword(password) {
+            const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d).{8,}$/;
+            return passwordRegex.test(password);
+        }
+
+        async function registerUser(event) {
+            try {
+                event.preventDefault(); // Stop the default form submission
+
+                const email = document.querySelector('input[name="email"]').value;
+                const firstname = document.querySelector('input[name="firstname"]').value;
+                const lastname = document.querySelector('input[name="lastname"]').value;
+                const password = document.querySelector('input[name="pass"]').value;
+                const confirmPassword = document.querySelector('input[name="cpass"]').value;
+                const username = `${document.querySelector('input[name="firstname"]').value}_${document.querySelector('input[name="lastname"]').value}`.replace(/\s+/g, "_"); // Replaces spaces with underscores
+
+                // Password and confirm password matching check
+                if (password !== confirmPassword) {
+                    showErrorAlert("Password Mismatch", "Password and Confirm Password do not match.");
+                    return;
+                }
+
+                // Password requirements check
+                if (!validatePassword(password)) {
+                    showErrorAlert("Password Requirements", "Password must have at least 8 characters, including letters and numbers.");
+                    return;
+                }
+
+                // Create user in Firebase Authentication
+                const userCredential = await createUserWithEmailAndPassword(getAuth(), email, password);
+                const user = userCredential.user;
+
+                // Send email verification
+                try {
+                    await sendEmailVerification(user);
+                } catch (verificationError) {
+                    console.error("Error sending email verification:", verificationError.message);
+                    // Handle the error, show an alert, or take appropriate action
+                    showErrorAlert("Email Verification Error", "Failed to send email verification. Please try again.");
+                    return;
+                }
+
+                // Create user data in Firebase Database
+                const database = getDatabase();
+                const userRef = ref(database, `adminUsers/${user.uid}`);
+                const userData = {
+                    email: email,
+                    username: username,
+                    isTeacher: true,
+                    isVerified: true,
+                    firstName: firstname,
+                    lastname: lastname,
+                    stats: {
+                    points: 999,
+                    rank: "Admin",
+                    wins: 999,
+                },
+                };
+
+                await set(userRef, userData);
+
+                Swal.fire({
+                    icon: "success",
+                    title: "Registration Successful!",
+                    text: "Your account has been successfully registered. Please check your email for verification.",
+                    showCancelButton: true,
+                    confirmButtonText: "Login",
+                    cancelButtonText: "Cancel",
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Redirect to index.html
+                        window.location.href = "index.html";
+                    }
+                });
+
+                console.log("User registered successfully!");
+            } catch (error) {
+                console.error("Error registering user:", error.message);
+                console.error("Full error details:", error);
+
+                // Check if the error is related to Firebase Authentication
+                if (error.code && error.code.startsWith("auth/")) {
+                    // Handle specific Firebase Authentication errors
+                    switch (error.code) {
+                        case "auth/email-already-in-use":
+                            showErrorAlert("Registration Error", "Email is already taken");
+                            break;
+                        // Add more cases as needed
+                        default:
+                            showErrorAlert("Registration Error", "An unexpected error occurred. Please try again later.");
+                    }
+                } else {
+                    // Handle general errors
+                    showErrorAlert("Registration Error", "An unexpected error occurred. Please try again later.");
+                }
+            }
+            return false; // Prevent form submission
+        }
+    </script>
+</head>
+
+<body>
+    <div id="preloader"></div>
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="" style="
+                        border-radius: 50px;
+                        padding: 20px;
+                        border: 10px solid rgb(0, 0, 0);
+                        border-bottom: 20px solid rgb(0, 0, 0);
+                        background: #ffffff;
+                    ">
+                <form class="validate-form" id="registrationForm">
+                    <br />
+                    <span class="login100-form-title" style="color: black">
+                        Register Admin
+                    </span>
+                    <script>
+                        function changeIcon() {
+                            var roleSelect =
+                                document.getElementById("roleSelect");
+                            var roleIcon =
+                                document.getElementById("roleIcon");
+
+                            // Map roles to corresponding icons
+                            var iconMapping = {
+                                student: "fa fa-graduation-cap",
+                                teacher: "fa fa-pencil-square",
+                                // Add more mappings as needed
+                            };
+
+                            // Get the selected option value
+                            var selectedRole = roleSelect.value;
+
+                            // Change the icon based on the selected option
+                            if (iconMapping[selectedRole]) {
+                                roleIcon.innerHTML =
+                                    '<i class="' +
+                                    iconMapping[selectedRole] +
+                                    '" aria-hidden="true"></i>';
+                            }
+                        }
+                    </script>
+                    <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz"
+                        required>
+                        <input class="input100" type="text" name="email" placeholder="Email" />
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="wrap-input100 validate-input" required>
+                                <input class="input100" type="text" name="firstname" placeholder="First Name" />
+                                <span class="focus-input100"></span>
+                                <span class="symbol-input100">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="wrap-input100 validate-input" required>
+                                <input class="input100" type="text" name="lastname" placeholder="Last Name" />
+                                <span class="focus-input100"></span>
+                                <span class="symbol-input100">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Password is required" required>
+                        <input class="input100" type="password" name="pass" id="password" placeholder="Password" />
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+                        <span class="toggle-password" onclick="togglePasswordVisibility()">
+                            <i class="fa fa-eye" id="password-toggle-icon" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Password is required" required>
+                        <input class="input100" type="password" name="cpass" id="confirmpassword"
+                            placeholder="Confirm Password" />
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+                        <span class="toggle-password" onclick="confirmtogglePasswordVisibility()">
+                            <i class="fa fa-eye" id="conpassword-toggle-icon" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+                    <script>
+                        // JavaScript function to toggle password visibility
+                        function togglePasswordVisibility() {
+                            const passwordInput =
+                                document.getElementById("password");
+                            const passwordToggleIcon =
+                                document.getElementById(
+                                    "password-toggle-icon"
+                                );
+
+                            if (passwordInput.type === "password") {
+                                passwordInput.type = "text";
+                                passwordToggleIcon.classList.remove(
+                                    "fa-eye"
+                                );
+                                passwordToggleIcon.classList.add(
+                                    "fa-eye-slash"
+                                );
+                            } else {
+                                passwordInput.type = "password";
+                                passwordToggleIcon.classList.remove(
+                                    "fa-eye-slash"
+                                );
+                                passwordToggleIcon.classList.add("fa-eye");
+                            }
+                        }
+
+                        function confirmtogglePasswordVisibility() {
+                            const passwordInput =
+                                document.getElementById("confirmpassword");
+                            const passwordToggleIcon =
+                                document.getElementById(
+                                    "conpassword-toggle-icon"
+                                );
+
+                            if (passwordInput.type === "password") {
+                                passwordInput.type = "text";
+                                passwordToggleIcon.classList.remove(
+                                    "fa-eye"
+                                );
+                                passwordToggleIcon.classList.add(
+                                    "fa-eye-slash"
+                                );
+                            } else {
+                                passwordInput.type = "password";
+                                passwordToggleIcon.classList.remove(
+                                    "fa-eye-slash"
+                                );
+                                passwordToggleIcon.classList.add("fa-eye");
+                            }
+                        }
+                    </script>
+                    <div class="container-login100-form-btn">
+                        <button class="login100-form-btn">Register</button>
+                    </div>
+                    <br />
+                    <div class="text-center">
+                        <a class="txt2" href="#" style="color: black" onclick="goBack()">
+                            Go back
+                            <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <script>
+                    function goBack() {
+                            window.history.back();
+                        }
+                    </script>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--===============================================================================================-->
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/bootstrap/js/popper.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/tilt/tilt.jquery.min.js"></script>
+    <script>
+        $(".js-tilt").tilt({
+            scale: 1.1,
+        });
+    </script>
+    <!--===============================================================================================-->
+    <script src="js/main.js"></script>
+
+    <script>
+        var loader = document.getElementById("preloader");
+
+        window.addEventListener("load", function () {
+            loader.style.display = "none";
+        });
+    </script>
+</body>
+
+</html>

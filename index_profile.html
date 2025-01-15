@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+<meta name="google-adsense-account" content="ca-pub-7801318214806091">
+    <title>Elementum/Account</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="css/bootstrap-icons.css" rel="stylesheet" />
+
+    <link href="css/templatemo-topic-listing.css" rel="stylesheet" />
+
+    <link rel="icon" href="images/Elementum-logo.png" />
+
+    <!--FONT GOOGLE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Lilita+One&display=swap"
+        rel="stylesheet" />
+        
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        .btn-primary {
+            background-color: #5f1578;
+            color: white;
+            border: 1px solid #5f1578;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: rgb(181, 45, 181);
+            border-color: rgb(181, 45, 181);
+        }
+
+        .btn-primary:active {
+            background-color: rgb(181, 45, 181);
+            /* Change to the same darker purple on click */
+            border-color: rgb(181, 45, 181);
+            /* Change border color on click */
+            color: white;
+            /* Text color on click */
+        }
+    
+    </style>
+    <link href="css/templatemo-topic-listing1.css" rel="stylesheet">
+    <link rel="stylesheet" href="neostyle.css">
+</head>
+
+<body id="top">
+
+    <div id="preloader">
+            <div class="wrapper">
+        <div class="box-wrap">
+            <div class="box one"></div>
+            <div class="box two"></div>
+            <div class="box three"></div>
+            <div class="box four"></div>
+            <div class="box five"></div>
+            <div class="box six"></div>
+        </div>
+    </div>
+    </div>
+    <main>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/Full-logo.png" alt="Topic Image" style="
+                                max-width: 200px;
+                                max-height: 90px;
+                                filter: drop-shadow(1px 2px 1px black);
+                            " />
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-lg-5 me-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html">HOME</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#topics-detail">STATUS</a>
+                        </li>
+
+                        <li id="lessonput" class="nav-item" style="display: none;">
+                            <a class="nav-link click-scroll" href="#whatput">LESSON</a>
+                        </li>
+
+                        <li id="quizput" class="nav-item" style="display: none;">
+                            <a class="nav-link click-scroll" href="#yourquiz">QUIZ</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#section_5" id="navbarLightDropdownMenuLink"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                style="color: #fed000">PROFILE</a>
+
+                            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                                <li id="profilelog" style="display: none">
+                                    <a class="dropdown-item" href="index_profile.html">Account</a>
+                                </li>
+
+                                <li id="loginItem" style="display: none">
+                                    <a class="dropdown-item" href="register_UI/index.html">Log-in</a>
+                                </li>
+                                <li id="logoutItem" style="display: none">
+                                    <a class="dropdown-item">Log-out</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <header
+            class="site-header d-flex flex-column justify-content-center align-items-center hero-section d-flex justify-content-center align-items-center">
+            <div class="container">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-5 col-12 mb-5">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="index.html">Homepage</a>
+                                </li>
+
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    Account
+                                </li>
+                            </ol>
+                        </nav>
+
+                        <h2 class="text-white" style="
+                                    text-shadow: -4px -4px 0 #000, 0 -4px 0 #000,
+                                        4px -4px 0 #000, 4px 0 0 #000,
+                                        4px 4px 0 #000, 0 4px 0 #000,
+                                        -4px 4px 0 #000, -4px 0 0 #000;
+                                ">
+                            Hello,
+                            <span id="accountName" style="
+                                        color: #fed000;
+                                        text-shadow: -4px -4px 0 #000,
+                                            0 -4px 0 #000, 4px -4px 0 #000,
+                                            4px 0 0 #000, 4px 4px 0 #000,
+                                            0 4px 0 #000, -4px 4px 0 #000,
+                                            -4px 0 0 #000;
+                                    ">
+                            </span>
+                        </h2>
+                                <h5 class="text-white" style="
+                                    text-shadow: -4px -4px 0 #000, 0 -4px 0 #000,
+                                        4px -4px 0 #000, 4px 0 0 #000,
+                                        4px 4px 0 #000, 0 4px 0 #000,
+                                        -4px 4px 0 #000, -4px 0 0 #000;
+                                ">
+                            First Name: 
+                            <span id="firstname" style="
+                                        color: #fed000;
+                                        text-shadow: -4px -4px 0 #000,
+                                            0 -4px 0 #000, 4px -4px 0 #000,
+                                            4px 0 0 #000, 4px 4px 0 #000,
+                                            0 4px 0 #000, -4px 4px 0 #000,
+                                            -4px 0 0 #000;
+                                    ">
+                            </span>
+                        </h5>
+                        <h5 class="text-white" style="
+                                    text-shadow: -4px -4px 0 #000, 0 -4px 0 #000,
+                                        4px -4px 0 #000, 4px 0 0 #000,
+                                        4px 4px 0 #000, 0 4px 0 #000,
+                                        -4px 4px 0 #000, -4px 0 0 #000;
+                                ">
+                            Last Name: 
+                            <span id="lastname" style="
+                                        color: #fed000;
+                                        text-shadow: -4px -4px 0 #000,
+                                            0 -4px 0 #000, 4px -4px 0 #000,
+                                            4px 0 0 #000, 4px 4px 0 #000,
+                                            0 4px 0 #000, -4px 4px 0 #000,
+                                            -4px 0 0 #000;
+                                    ">
+                            </span>
+                        </h5>
+                        <h3 id="accountstatus" class="text-white" style="
+                                    text-shadow: -4px -4px 0 #000, 0 -4px 0 #000,
+                                        4px -4px 0 #000, 4px 0 0 #000,
+                                        4px 4px 0 #000, 0 4px 0 #000,
+                                        -4px 4px 0 #000, -4px 0 0 #000;
+                                "></h3>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="index_editProfile.html"><i class="fas fa-edit"></i> Edit
+                                    Profile</a>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="col-lg-5 col-12">
+                        <div class="topics-detail-block">
+                            <img id="profilePicture" class="topics-detail-block-image img-fluid" />
+                        </div>
+                    </div>
+                    <style>
+    #profilePicture {
+        max-width: 200px; /* Set maximum width to 200 pixels */
+        max-height: 200px; /* Set maximum height to 200 pixels */
+        width: 200px;
+        height: 200px;
+        display: block;
+        margin: auto;
+        border: black solid 10px;
+        background-color: white;
+    }
+    
+    #emblem{
+            height: 90px
+        }
+
+    @media (max-width: 700px) {
+        blockquote {
+            font-size: 14px;
+            margin: 15px;
+            padding: 20px;
+        }
+
+        #profilePicture {
+            max-width: 100px; /* Allow the image to be responsive on smaller screens */
+            max-height: 100px; /* Allow the image to be responsive on smaller screens */
+            width: 100px;
+            height: 100px;
+            margin-left: auto;
+            margin-top: 5px;
+            margin-bottom: 0px;
+            height: 100px;
+            border: black solid 5px;
+        }
+        
+        #emblem{
+            height: 50px
+        }
+        
+        #statsRanks{
+            font-size: 20px;
+        }
+                                    
+                            .site-header{
+                                padding-bottom: 20px;
+                            }
+                            
+                            .image-logo-range{
+                                display: none;
+                            }
+                            
+                            .breadcrumb-item, li{
+                                font-size: 15px;
+                            }
+    }
+    
+            @media (max-width: 1200px){
+                        .navbar-expand-lg .navbar-nav .nav-link {
+                          border-radius: var(--border-radius-large);
+                          margin: 10px;
+                          padding: 10px;
+                          margin-right:20px;
+                        }
+                    }
+                    
+        @media (max-width: 1300px) {
+                        .navbar-nav .nav-link {
+                            font-size: 20px;
+                            text-shadow: 0px;
+                    }
+        }
+</style>
+
+                </div>
+            </div>
+        </header>
+
+        <section class="topics-detail-section section-padding" id="topics-detail">
+            <div class="container">
+                <div class="row">
+                    <blockquote class="row col-lg-8 col-12 m-auto mb-4" style="border: black solid 10px; border-radius: 25px;">
+                    <div class="col-lg-8 col-12 m-auto">
+                        <div class="row">
+                            
+                            <h3 class="mb-4 text-center">STATUS</h3>
+                            <hr>
+                            <div class="col text-center">
+                                <h4>
+                                    Points: <span id="statsPoints"></span>
+                                </h4>
+                            </div>
+
+                            <div class="col text-center">
+                                <h4>
+                                    Award: <span id="statsRanks"> </span>
+                                    </h4>
+                                    <img id="emblem" src="" alt="Rank" />
+                                
+                            </div>
+
+                            <div class="col text-center">
+                                <h4>Wins: <span id="statsWins"></span></h4>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    </blockquote>
+                <hr>
+                    
+                    <div style="margin-top: 30px" id="onlyforteach">
+    <blockquote class="row col-lg-8 col-12 m-auto mb-4">
+        <h2 style="text-align: center" id="whatput">
+            Available Lessons
+        </h2>
+    </blockquote>
+
+    <div class="row col-lg-8 col-12 m-auto mb-4">
+        <a href="upload_folder/upload.html" class="btn btn-success mb-3">
+            <i class="fa fa-plus-circle mr-2"></i> Add Lesson
+        </a>
+        <input type="text" id="searchInput" placeholder="Search for a filename.." class="form-control mb-3" />
+
+        <div class="table-responsive">
+            <table class="table table-striped" id="lessons-list">
+                <thead>
+                    <tr style="background-color: #5f1578; color: white;">
+                        <th style="white-space: nowrap;">#</th>
+                        <th style="white-space: nowrap;">Date</th>
+                        <th style="white-space: nowrap;">Filename</th>
+                        <th style="white-space: nowrap;">Download</th>
+                        <th style="white-space: nowrap;">Delete</th>
+                    </tr>
+                </thead>
+                <tbody><!-- Content will be dynamically added here lessons-list --></tbody>
+            </table>
+        </div>
+
+        <p id="noDataMessage" style="text-align: center; display: none;">No lessons available.</p>
+    </div>
+</div>
+                    <div class="row">
+                        <div>
+                            <!-- Search bar with search button -->
+
+                            <table class="table table-striped" id="student_lessons-list" style="border-radius: 20px">
+
+                            </table>
+                        </div>
+                    </div>
+                     <hr>
+                    <div style="margin-top: 30px" id="yourquiz">
+                        <blockquote class="row col-lg-8 col-12 m-auto mb-4">
+                            <h2 style="text-align: center">
+                                Your Quizzes
+                            </h2>
+                        </blockquote>
+
+                        <div class="row col-lg-8 col-12 m-auto mb-4">
+                        <a href="create_quiz_folder/quiz.html" class="btn btn-success mb-3">
+                            <i class="fa fa-plus-circle mr-2"></i> Add Quiz
+                        </a>
+                        <div class="table-responsive">
+                            <table class="table table-striped" id="quiz-list" style="border-radius: 20px">
+                                <thead>
+                                    <tr style="
+                                                        background-color: #5f1578;
+                                                        color: white;
+                                                        border-radius: 20px">
+                                        <th>Quiz code</th>
+                                        <th>Quiz type</th>
+                                        <th>No. of items</th>
+                                        <th>
+                                            Duration (Minutes)
+                                        </th>
+                                        <th>View</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Content will be dynamically added here -->
+                                </tbody>
+                            </table>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="upload_lesson" style="display: none; margin-top: 30px;">
+                            <blockquote class="row col-lg-8 col-12 m-auto mb-4">
+                                <h2 style="text-align: center">
+                                    Upload your lesson or Create a quiz
+                                </h2>
+                            </blockquote>
+                            <div class="row col-lg-8 col-12 m-auto mb-4" style="margin-left: auto;">
+                                <div class="col" >
+                                    <a href="upload_folder/upload.html" class="image-hover">
+                                        <img src="images/upload_button.png"
+                                            class="topics-detail-block-image-2 img-fluid image-height100" alt="" />
+                                    </a>
+                                </div>
+                                <div class="col" id="create_quiz">
+                                    <a href="create_quiz_folder/quiz.html" class="image-hover">
+                                        <img src="images/create_button.png"
+                                            class="topics-detail-block-image-2 img-fluid image-height100" alt=""  />
+                                    </a>
+                                </div>
+                            </div>
+                            
+                    </div>
+                </div>
+                </div>
+                <style>
+                                @media (max-width: 900px) {
+                                    .image-height100 {
+                                    height: 60px;
+                                    }
+                                    thead, tr, th, tbody, td, .btn, .btn-success, .btn-danger{
+                                        font-size: 10px;
+                                    }
+                                    td.truncate {
+                                        max-width: 100px; /* Set your desired max-width for the truncated content */
+                                        white-space: nowrap;
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;
+                                    }
+                                }
+                            </style>
+        </section>
+        
+        <section class="faq-section section-padding" id="section_4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-12">
+                        <h2 class="mb-4"></h2>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <div class="col-lg-5 col-12 image-logo-range">
+                        <img src="images/Elementum-logo.png" class=" img-fluid" alt="FAQs" />
+                        <br><br>
+                    </div>
+
+                    <div class="col-lg-6 col-12 m-auto">
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Information
+                                    </button>
+                                </h2>
+
+                                <div id="collapseOne" class="accordion-collapse collapse show"
+                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        The App and Website are produced
+                                        by:<br />
+                                        Jazlyn Kirby B. Absalon<br />
+                                        Raynald Niño F. Escala<br />
+                                        Molech Matt A. Henna<br />
+                                        Kyle Ann O. Pa-a<br />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-12 mb-4 pb-2">
+                    <a class="navbar-brand mb-2" href="index.html">
+                        <img src="images/Full-logo.png" alt="Topic Image" style="
+                                    max-width: 210px;
+                                    max-height: 100px;
+                                    filter: drop-shadow(1px 2px 1px black);
+                                " />
+                    </a>
+                </div>
+
+
+
+                <div class="col-lg-3 col-md-4 col-12 mt-4 mt-lg-0 ms-auto">
+                    <p class="copyright-text mt-lg-5 mt-4">
+                        Copyright © 2024 Elementum <br /><br />
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FILES -->
+    <script type="module" src="js/signout1.js"></script>
+    <script type="module" src="js/firebase-observer.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/custom.js"></script>
+
+    <script type="module">
+        import { firebaseConfig } from "/js/firebase-config.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+        import {
+            getDatabase,
+            get,
+            ref,
+            onValue,
+            remove,
+            update
+        } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-database.js";
+        import {
+            getStorage,
+            ref as storageRef,
+            getDownloadURL,
+            deleteObject,
+        } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-storage.js";
+        import {
+            getAuth,
+            signInWithEmailAndPassword,
+        } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js";
+
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        console.log(app);
+
+        const db = getDatabase();
+        const tableBody = document.querySelector("#lessons-list tbody");
+
+        import { getCookie } from "/js/cookie-getter.js";
+        // Retrieve the username from the stored cookie
+        const userDataString = getCookie("userData");
+        const userData = JSON.parse(userDataString);
+        const loggedInUsername = userData.username; // Assuming "username" is the property in the cookie data
+
+            function populateTable(lessonsData) {
+                const tableBody = document.querySelector("#lessons-list tbody");
+                tableBody.innerHTML = ""; // Clear the table body
+            
+                if (Object.keys(lessonsData).length === 0) {
+                    // No lessons available, display the message
+                    document.getElementById("noDataMessage").style.display = "block";
+                } else {
+                    // Populate the table
+                    document.getElementById("noDataMessage").style.display = "none";
+                    let count = 1; // Initialize a counter
+            
+                    for (const index in lessonsData) {
+                        const lesson = lessonsData[index];
+                        const tr = document.createElement("tr");
+                        tr.innerHTML = `
+                            <td>${count}</td>
+                            <td>${lesson.date}</td>
+                            <td>${lesson.filename}</td>
+                            <td>
+                                <button class="download-button btn btn-success" data-index="${index}">
+                                    <i class="fas fa-download"></i> Download
+                                </button>
+                            </td>
+                            <td>
+                                <button class="delete-button btn btn-danger" data-index="${index}">
+                                    <i class="fas fa-trash"></i> Delete
+                                </button>
+                            </td>
+                        `;
+                        tableBody.appendChild(tr);
+            
+                        count++; // Increment the counter for the next iteration
+                    }
+                }
+            }
+
+        function filterLessons(searchQuery) {
+            const userLessonsRef = ref(db, `lessons/${loggedInUsername}`);
+
+            onValue(userLessonsRef, (snapshot) => {
+                const lessonsData = snapshot.val();
+                if (lessonsData) {
+                    const filteredLessons = Object.values(lessonsData).filter((lesson) =>
+                        lesson.filename.toLowerCase().includes(searchQuery.toLowerCase())
+                    );
+                    populateTable(filteredLessons);
+                }
+            });
+        }
+
+        // Add an event listener to the search input
+        const searchInput = document.getElementById("searchInput");
+        searchInput.addEventListener("input", (event) => {
+            const searchQuery = event.target.value;
+            filterLessons(searchQuery);
+        });
+
+        function retrieveLessonsData() {
+            // Reference to the "lessons" node for the logged-in user
+            const userLessonsRef = ref(db, `lessons/${loggedInUsername}`);
+
+            onValue(userLessonsRef, (snapshot) => {
+                tableBody.innerHTML = ""; // Clear the table
+
+                const lessonsData = snapshot.val();
+                if (lessonsData) {
+                    populateTable(lessonsData);
+                }
+            });
+        }
+
+        retrieveLessonsData(); // Call this function to initially populate the table with lessons data for the logged-in user
+
+        // Event listener for the new buttons (Download and Delete)
+        tableBody.addEventListener("click", (event) => {
+            const target = event.target;
+
+            if (target.classList.contains("download-button")) {
+                const index = target.getAttribute("data-index");
+                downloadLesson(index);
+            }
+
+            if (target.classList.contains("delete-button")) {
+                const index = target.getAttribute("data-index");
+                deleteLesson(index);
+            }
+        });
+
+        // Function to download a lesson by its filename
+        function downloadLesson(index) {
+            // Reference to the "lessons" node for the logged-in user
+            const userLessonsRef = ref(db, `lessons/${loggedInUsername}`);
+
+            // Get the lesson data from the Realtime Database
+            onValue(userLessonsRef, (snapshot) => {
+                const lessonsData = snapshot.val();
+                if (lessonsData) {
+                    const lesson = lessonsData[index];
+
+                    if (lesson && lesson.filename) {
+                        const filename = lesson.filename;
+
+                        // Reference to the file in Firebase Storage
+                        const fileRef = storageRef(getStorage(), `lessons/${loggedInUsername}/${filename}`);
+
+                        // Get the download URL for the file
+                        getDownloadURL(fileRef)
+                            .then((url) => {
+                                // Create a temporary link element to trigger the download
+                                const a = document.createElement("a");
+                                a.href = url;
+                                a.download = filename;
+                                a.target = "_blank"; // Open in a new tab
+                                a.style.display = "none";
+
+                                // Add the link to the document and trigger the click event
+                                document.body.appendChild(a);
+                                a.click();
+
+                                // Clean up by removing the link element
+                                document.body.removeChild(a);
+                            })
+                            .catch((error) => {
+                                console.error("Error getting download URL:", error);
+                            });
+                    }
+                }
+            });
+        }
+
+        function deleteLesson(index, filename) {
+            Swal.fire({
+                title: "Delete Lesson",
+                text: "Are you sure you want to delete this lesson?",
+                icon: "question",
+                showCancelButton: true,
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Reference to the lesson with the given index under the logged-in user's node
+                    const lessonRef = ref(db, `lessons/${loggedInUsername}/${index}`);
+
+                    // Use onValue to fetch the lesson data before deleting it
+                    onValue(lessonRef, (snapshot) => {
+                        const lessonData = snapshot.val();
+
+                        // Reference to the file in Firebase Storage
+                        const storagePath = `lessons/${loggedInUsername}/${lessonData.filename}`;
+                        const storageRefToDelete = storageRef(getStorage(), storagePath);
+
+                        // Delete the file from Firebase Storage
+                        deleteObject(storageRefToDelete)
+                            .then(() => {
+                                // File deleted successfully from storage
+                                console.log("File deleted successfully from storage.");
+
+                                // Remove the lesson from the Realtime Database
+                                remove(lessonRef)
+                                    .then(() => {
+                                        Swal.fire({
+                                            title: "Success",
+                                            text: "Lesson has been deleted successfully",
+                                            icon: "success",
+                                            confirmButtonText: "OK",
+                                        });
+                                    })
+                                    .catch((error) => {
+                                        Swal.fire({
+                                            title: "Error",
+                                            text: "An error occurred while deleting the lesson from the database.",
+                                            icon: "error",
+                                            confirmButtonText: "OK",
+                                        });
+                                        console.error("Error deleting lesson from database:", error);
+                                    });
+                            })
+                            .catch((error) => {
+                                Swal.fire({
+                                    title: "Error",
+                                    text: "An error occurred while deleting the file from storage.",
+                                    icon: "error",
+                                    confirmButtonText: "OK",
+                                });
+                                console.error("Error deleting file from storage:", error);
+                            });
+                    });
+                }
+            });
+        }
+
+        function downloadStudentLesson(teacherName, filename) {
+            console.log("Download button clicked for teacher: " + teacherName + ", filename: " + filename);
+
+            // Construct the reference to the file in Firebase Storage using the teacher's name
+            const fileRef = storageRef(getStorage(), `lessons/${teacherName}/${filename}`);
+
+            // Get the download URL for the file
+            getDownloadURL(fileRef)
+                .then((url) => {
+                    console.log("Download URL: " + url);
+
+                    // Create a temporary link element to trigger the download
+                    const a = document.createElement("a");
+                    a.href = url;
+                    a.download = filename; // Use the original filename
+                    a.target = "_blank"; // Open in a new tab
+                    a.style.display = "none";
+
+                    // Add the link to the document and trigger the click event
+                    document.body.appendChild(a);
+                    a.click();
+
+                    // Clean up by removing the link element
+                    document.body.removeChild(a);
+                })
+                .catch((error) => {
+                    console.error("Error getting download URL:", error);
+                });
+        }
+
+
+
+// Function to populate the quiz table
+function populateQuizTable(quizData, loggedInUsername) {
+    const quizTableBody = document.querySelector("#quiz-list tbody");
+    quizTableBody.innerHTML = ""; // Clear the table
+
+    const allowedQuizTypes = [
+        "identification_quiz",
+        "multiplechoice_quiz",
+    ];
+
+                        for (const quizType of allowedQuizTypes) {
+                            if (quizData[quizType]) {
+                                for (const username in quizData[quizType]) {
+                                    if (username === loggedInUsername) {
+                                        const uidData = quizData[quizType][username];
+                    
+                                        for (const uid in uidData) {
+                        const quizInfo = uidData[uid];
+                        const duration = quizInfo.duration;
+                    
+                        const number = Object.keys(quizInfo).filter(
+                            (key) => !isNaN(key)
+                        ).length;
+                    
+                        // Convert duration to MM:SS format
+                        const durationMinutes = Math.floor(duration / 60);
+                        const durationSeconds = duration % 60;
+                        const formattedDuration = `${String(durationMinutes).padStart(2, '0')}:${String(durationSeconds).padStart(2, '0')}`;
+                    
+                        const tr = document.createElement("tr");
+                        tr.innerHTML = `
+                            <td class="truncate">${uid}</td>
+                            <td>${quizType === 'identification_quiz' ? 'Identification' : (quizType === 'multiplechoice_quiz' ? 'Multiple Choice' : '')}</td>
+                            <td>${number}</td>
+                            <td>${formattedDuration}</td>
+                            <td>
+                                <button class="view-button btn btn-info text-white" data-toggle="modal" data-target="#quizModal" data-quiztype="${quizType}" data-username="${username}" data-uid="${uid}">
+                                    <i class="fas fa-eye"></i> View
+                                </button>
+                            </td>
+                            <td>
+                                <button class="delete-buttonquiz btn btn-danger common-delete-button" data-quiztype="${quizType}" data-username="${username}" data-uid="${uid}">
+                                    <i class="fas fa-trash"></i> Delete
+                                </button>
+                            </td>
+                        `;
+                    
+                        tr.querySelector(".view-button").addEventListener("click", function () {
+                            displayQuizContent(quizType, username, uid);
+                        });
+                    
+                        quizTableBody.appendChild(tr);
+                    }
+                }
+            }
+        }
+    }
+}
+
+function displayQuizContent(quizType, username, uid) {
+    const quizRef = ref(
+        db,
+        `Gamemodes/${quizType}/${username}/${uid}`
+    );
+
+    get(quizRef).then((snapshot) => {
+        if (snapshot.exists()) {
+            const quizData = snapshot.val();
+
+            // You can customize the content display based on quizType
+            let contentHtml = `
+                <div class="modal-header">
+                    <h5 class="modal-title">Quiz Content</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+            `;
+
+            if (quizType === "identification_quiz") {
+                // Display content for identification quiz
+                contentHtml += `<p><strong>Quiz Type:</strong> Identification</p>`;
+                contentHtml += `<p><strong>Quiz Code:</strong> ${uid}</p>`;
+                contentHtml += `<p><strong>Duration:</strong> ${convertSecondsToMinutes(quizData.duration)} minutes</p>`;
+
+                // Display each question and answer in input fields
+                for (const key in quizData) {
+                    if (!isNaN(key)) {
+                        contentHtml += `<hr>`;
+                        contentHtml += `
+                            <div class="mb-3">
+                                <label for="question${key}" class="form-label">Question ${key}</label>
+                                <input type="text" class="form-control" id="question${key}" value="${quizData[key].question}" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label for="answer${key}" class="form-label">Answer ${key}</label>
+                                <input type="text" class="form-control" id="answer${key}" value="${quizData[key].answer}" readonly>
+                            </div>
+                        `;
+                    }
+                }
+            } else if (quizType === "multiplechoice_quiz") {
+                // Display content for multiple-choice quiz
+                contentHtml += `<p><strong>Quiz Type:</strong> Multiple Choice</p>`;
+                contentHtml += `<p><strong>Quiz Code:</strong> ${uid}</p>`;
+                contentHtml += `<p><strong>Duration:</strong> ${convertSecondsToMinutes(quizData.duration)} minutes</p>`;
+
+                // Display each question and options in input fields
+                for (const key in quizData) {
+                    if (!isNaN(key)) {
+                        contentHtml += `<hr>`;
+                        contentHtml += `
+                            <div class="mb-3">
+                                <label for="question${key}" class="form-label">Question ${key}</label>
+                                <input type="text" class="form-control" id="question${key}" value="${quizData[key].question}" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label for="correctAnswer${key}" class="form-label">Correct Answer ${key}</label>
+                                <input type="text" class="form-control" id="correctAnswer${key}" value="${quizData[key].correctAnswer}" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label for="options${key}" class="form-label">Options ${key}</label>
+                                <input type="text" class="form-control" id="options${key}" value="${quizData[key].options.join(", ")}" readonly>
+                            </div>
+                        `;
+                    }
+                }
+            }
+
+            // Add an "Edit" and "Plus" button
+            contentHtml += `
+                <div class="modal-footer text-center">
+                    <button type="button" class="btn btn-warning btn-lg text-white" id="editQuizBtn"><i class="fa fa-edit"></i>Edit</button>
+                    <button type="button" class="btn btn-success btn-lg text-white" id="saveChangesBtn" style="display: none;">Save Changes</button>
+                </div>
+            `;
+
+            // Close modal body and update the modal content
+            contentHtml += `</div>`;
+
+            // Clear existing content before appending the new content
+            document.getElementById("quizModalBody").innerHTML = "";
+
+            document.getElementById("quizModalBody").innerHTML = contentHtml;
+
+            // Add click event listener for the "Edit" button
+            document.getElementById("editQuizBtn").addEventListener("click", function () {
+                // Call a function to handle the editing logic
+                handleQuizEditing(quizType, username, uid, quizData);
+            });
+
+            // Add click event listener for the "Save Changes" button
+            document.getElementById("saveChangesBtn").addEventListener("click", function () {
+                // Call a function to handle saving changes
+                handleSaveChanges(quizType, username, uid);
+            });
+
+        }
+    });
+}
+
+function handleQuizEditing(quizType, username, uid, quizData) {
+    // Make input fields editable
+    const inputFields = document.querySelectorAll('.form-control');
+    inputFields.forEach(field => {
+        field.removeAttribute('readonly');
+    });
+
+    // Show "Save Changes" button and hide "Edit" button
+    document.getElementById("editQuizBtn").style.display = "none";
+    document.getElementById("saveChangesBtn").style.display = "block";
+}
+
+function handleSaveChanges(quizType, username, uid) {
+    // Implement logic to save changes
+    // Retrieve updated data from input fields and update Firebase database
+    const updatedQuizData = {};
+
+    // Get the updated content from input fields
+    const inputFields = document.querySelectorAll('.form-control');
+    inputFields.forEach(field => {
+        const fieldName = field.id;
+        const fieldValue = field.value;
+
+        // Parse the field ID to get the question number
+        const questionNumber = parseInt(fieldName.replace(/[^\d]/g, ''), 10);
+
+        // Ensure the field is associated with a question (has a valid question number)
+        if (!isNaN(questionNumber)) {
+            // Initialize an object for the question if it doesn't exist
+            if (!updatedQuizData[questionNumber]) {
+                updatedQuizData[questionNumber] = {};
+            }
+
+            // Update the corresponding field for the question
+            const fieldWithoutNumber = fieldName.replace(/\d+/g, '');
+
+            if (fieldWithoutNumber === 'options') {
+                // Treat options as an array and split the input string
+                const optionsArray = fieldValue.split(", ");
+
+                // Update the options array
+                updatedQuizData[questionNumber][fieldWithoutNumber] = optionsArray;
+            } else {
+                updatedQuizData[questionNumber][fieldWithoutNumber] = fieldValue;
+            }
+        }
+    });
+
+    // Save the updated data to Firebase (implement this part based on your database structure)
+    const quizRef = ref(
+        db,
+        `Gamemodes/${quizType}/${username}/${uid}`
+    );
+
+    update(quizRef, updatedQuizData).then(() => {
+        // Make input fields readonly again
+        inputFields.forEach(field => {
+            field.setAttribute('readonly', true);
+        });
+
+        // Show a success message using SweetAlert2
+        Swal.fire({
+            title: "Success!",
+            text: "Quiz data updated successfully",
+            icon: "success",
+            confirmButtonText: "OK",
+        });
+
+        // Show "Edit" button and hide "Save Changes" button
+        document.getElementById("editQuizBtn").style.display = "block";
+        document.getElementById("saveChangesBtn").style.display = "none";
+
+        // Optionally, you can perform other actions after a successful update
+        console.log("Quiz data updated successfully");
+    }).catch((error) => {
+        // Handle errors
+        console.error("Error updating quiz data:", error);
+    });
+}
+
+// Helper function to convert seconds to minutes
+function convertSecondsToMinutes(seconds) {
+    return (seconds / 60).toFixed(2);
+}
+
+        // Retrieve quiz data and populate the quiz table
+        function retrieveQuizData() {
+            const quizRef = ref(db, "Gamemodes"); // Adjust the reference as needed
+
+            onValue(quizRef, (snapshot) => {
+                const quizData = snapshot.val();
+                if (quizData) {
+                    populateQuizTable(quizData, loggedInUsername);
+                }
+            });
+        }
+
+        // Call the function to initially populate the quiz table
+        retrieveQuizData();
+
+        // Get the table element
+        const quizTable = document.querySelector("#quiz-list");
+
+        // Add an event listener for the table
+        quizTable.addEventListener("click", (event) => {
+            const target = event.target;
+
+            // Check if the clicked element has the common class "common-delete-button"
+            if (target.classList.contains("common-delete-button")) {
+                const quizType = target.getAttribute("data-quiztype");
+                const username = target.getAttribute("data-username");
+                const uid = target.getAttribute("data-uid");
+
+                // Call the deleteQuiz function with the retrieved data
+                deleteQuiz(quizType, username, uid);
+            }
+        });
+// Function to delete a quiz
+function deleteQuiz(quizType, username, uid) {
+    // Reference to the quiz to be deleted
+    const quizRef = ref(
+        db,
+        `Gamemodes/${quizType}/${username}/${uid}`
+    );
+
+    // Display a confirmation dialog
+    Swal.fire({
+        title: "Delete Quiz",
+        text: "Are you sure you want to delete this quiz?",
+        icon: "question",
+        showCancelButton: true,
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Reference to the quiz with the given UID under the specified quiz type and username
+            const quizRef = ref(
+                db,
+                `Gamemodes/${quizType}/${username}/${uid}`
+            );
+
+            // Remove the quiz data from the database
+            remove(quizRef)
+                .then(() => {
+                    // Quiz deleted successfully, display a success message
+                    Swal.fire({
+                        title: "Success!",
+                        text: "Quiz has been successfully deleted.",
+                        icon: "success",
+                        confirmButtonText: "OK",
+                    });
+                })
+                .catch((error) => {
+                    console.error("Error deleting quiz:", error);
+
+                    // Display an error message if deletion fails
+                    Swal.fire({
+                        title: "Error",
+                        text: "An error occurred while deleting the quiz.",
+                        icon: "error",
+                        confirmButtonText: "OK",
+                    });
+                });
+
+            // Also, remove the UID node
+            const uidRef = ref(
+                db,
+                `Gamemodes/${quizType}/${username}`
+            );
+            removeChild(uidRef, uid);
+        }
+    });
+}
+        // Get the profile picture element
+        const profilePicture = document.getElementById("profilePicture");
+
+
+
+        if (userDataString) {
+            try {
+                const userData = JSON.parse(userDataString);
+
+                const isTeacher = userData.isTeacher;
+                const email = userData.email;
+                const userName = userData.username;
+                const profilePicture = userData.profilePicture;
+                const points = userData.stats.points;
+                const ranks = userData.stats.rank;
+                const wins = userData.stats.wins;
+                const firstnames = userData.firstName;
+                const lastnames = userData.lastName;
+
+
+                if (userName) {
+    try {
+        // Reference to the user's profile picture in storage
+        const storage = getStorage();
+        const profilePictureRef = storageRef(storage, `profilePictures/${email}/${profilePicture}`);
+
+        // Get the download URL for the profile picture
+        const downloadURL = await getDownloadURL(profilePictureRef);
+
+        // Set the profile picture source
+        const profilePictureElement = document.getElementById("profilePicture");
+        profilePictureElement.src = downloadURL;
+    } catch (error) {
+        console.error("Error fetching profile picture:", error);
+        // If there's an error fetching the profile picture, set a default image
+        const profilePictureElement = document.getElementById("profilePicture");
+        profilePictureElement.src = "register_UI/images/default_profile.png";
+    }
+} else {
+                    // If no user is logged in or no profile picture, you can set a default image
+                    const profilePictureElement = document.getElementById("profilePicture");
+                    profilePictureElement.src = "images/noicon.png";
+                }
+                // Get the element with id "upload_lesson"
+                const uploadLessonDiv =
+                    document.getElementById("upload_lesson");
+
+                const createdQuizDiv =
+                    document.getElementById("create_quiz");
+
+                const accountNameElement =
+                    document.getElementById("accountName");
+
+                const accountStatus =
+                    document.getElementById("accountstatus");
+
+                const accountPoints =
+                    document.getElementById("statsPoints");
+                    
+                const firstName =
+                    document.getElementById("firstname");
+                const lastName =
+                    document.getElementById("lastname");    
+
+                const blockput = document.getElementById("whatput");
+
+                const quizput = document.getElementById("yourquiz");
+
+                const accountRanks = document.getElementById("statsRanks");
+
+                const accountWins = document.getElementById("statsWins");
+
+                const emblem = document.getElementById("emblem");
+
+                const lessonList = document.getElementById("lessons-list");
+                const searchList = document.getElementById("searchInput");
+                const studentList = document.getElementById(
+                    "student_lessons-list"
+                );
+                const lessonlabel = document.getElementById("lessonput");
+                const quizlabel = document.getElementById("quizput");
+                
+                const teachonly = document.getElementById("onlyforteach");
+
+                if (userName !== "") {
+                    // Update the text content of the element based on userData.username searchInput
+                    accountNameElement.textContent = userData.reUsername;
+                    accountPoints.textContent = userData.stats.points;
+                    accountWins.textContent = userData.stats.wins;
+                    firstName.textContent = firstnames;
+                    lastName.textContent = lastnames;
+                    accountRanks.textContent = ranks;
+                    
+
+                    if (isTeacher) {
+                        accountStatus.textContent = "Teacher";
+                        blockput.textContent = "Your Lessons";
+                        quizput.style.display = "block";
+                        lessonList.style.display = "block";
+                        studentList.style.display = "none";
+                        searchList.style.display = "block";
+                        lessonlabel.style.display = "block";
+                        quizlabel.style.display = "block";
+                        teachonly.style.display = "block";
+                    } else {
+                        accountStatus.textContent = "Student";
+                        blockput.style.display = "none";
+                        uploadLessonDiv.style.display = "none";
+                        createdQuizDiv.style.display = "none";
+                        quizput.style.display = "none";
+                        lessonList.style.display = "none";
+                        studentList.style.display = "block";
+                        searchList.style.display = "none";
+                        lessonlabel.style.display = "none";
+                        quizlabel.style.display = "none";
+                        teachonly.style.display = "none";
+                    }
+var emblemSrc = ""; // Initialize the emblem source variable
+
+if (ranks === "Copper I") {
+    emblemSrc = "cu_1.png";
+} else if (ranks === "Copper II") {
+    emblemSrc = "cu_2.png";
+} else if (ranks === "Copper III") {
+    emblemSrc = "cu_3.png";
+} else if (ranks === "Copper IV") {
+    emblemSrc = "cu_4.png";
+} else if (ranks === "Silver I") {
+    emblemSrc = "ag_1.png";
+} else if (ranks === "Silver II") {
+    emblemSrc = "ag_2.png";
+} else if (ranks === "Silver III") {
+    emblemSrc = "ag_3.png";
+} else if (ranks === "Silver IV") {
+    emblemSrc = "ag_4.png";
+} else if (ranks === "Gold I") {
+    emblemSrc = "au_1.png";
+} else if (ranks === "Gold II") {
+    emblemSrc = "au_2.png";
+} else if (ranks === "Gold III") {
+    emblemSrc = "au_3.png";
+} else if (ranks === "Gold IV") {
+    emblemSrc = "au_4.png";
+} else if (ranks === "Cobalt I") {
+    emblemSrc = "co_1.png";
+} else if (ranks === "Cobalt II") {
+    emblemSrc = "co_2.png";
+} else if (ranks === "Cobalt III") {
+    emblemSrc = "co_3.png";
+} else if (ranks === "Cobalt IV") {
+    emblemSrc = "co_4.png";
+} else if (ranks === "Elemental") {
+    emblemSrc = "elemental_rank.png";
+} else if (ranks === "Unranked") {
+    emblemSrc = "unranked.png";
+} else if (ranks === "Teacher") {
+    emblemSrc = "teacher_rank.png";
+}else if (ranks === "Admin") {
+    emblemSrc = "teacher_rank.png";
+} else {
+    emblemSrc = "images/ranks/unranked.png";
+}
+
+// Set the image source based on the emblemSrc value
+emblem.src = "images/ranks/" + emblemSrc;
+} else{
+    console.log("egg");
+}
+    } catch (error) {
+        console.error("Error parsing JSON:", error);
+    }
+} else {
+    console.log("Cookie not found");
+}
+
+    </script>
+    <script>
+        var loader = document.getElementById("preloader");
+
+        window.addEventListener("load", function () {
+            loader.style.display = "none";
+        });
+    </script>
+    <!-- Add this modal at the end of your HTML body -->
+<div class="modal" id="quizModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-body" id="quizModalBody">
+                <!-- Content will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

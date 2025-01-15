@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+<meta name="google-adsense-account" content="ca-pub-7801318214806091">
+        <title>Elementum/Create</title>
+
+        <!--===============================================================================================-->
+        <link rel="icon" href="../images/Elementum-logo.png" />
+        <!--===============================================================================================-->
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="../register_UI/vendor/bootstrap/css/bootstrap.min.css"
+        />
+        <!--===============================================================================================-->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="../register_UI/fonts/font-awesome-4.7.0/css/font-awesome.min.css"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Lilita+One&display=swap"
+            rel="stylesheet"
+        />
+        <!--===============================================================================================-->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="../register_UI/vendor/animate/animate.css"
+        />
+        <!--===============================================================================================-->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="../register_UI/vendor/css-hamburgers/hamburgers.min.css"
+        />
+        <!--===============================================================================================-->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="../register_UI/vendor/select2/select2.min.css"
+        />
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="../register_UI/css/util.css" />
+        <link rel="stylesheet" type="text/css" href="../register_UI/css/main.css" />
+        <!--===============================================================================================-->
+        <style>
+            .overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #9053c7; /* Adjust the background color and opacity as needed */
+                z-index: 9999; /* Ensure it's above other content */
+                text-align: center;
+            }
+
+            .overlay-content {
+                border-radius: 40px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="preloader"></div>
+        <div class="limiter">
+            <div class="container-login100">
+                                       <div class="wrap-login100" style="  border: 10px solid rgb(0, 0, 0);
+  border-bottom: 20px solid rgb(0, 0, 0); border-radius: 50px; ">
+                <style>
+                    @media (max-width: 800px) {
+                        .wrap-login100 {
+                            padding-top: 40px;
+                            }
+                        .p-t-136{
+                            padding-top: 0;
+                            }  
+                        .login100-form-title {
+                              padding-bottom: 20px;
+                              font-size: 20px;
+                        }
+                    }
+                </style>
+                <div class="login100-pic js-tilt" style="margin-right: 80px;" data-tilt>
+                        <img src="../register_UI/images/assessment_button.png" alt="IMG" />
+                    </div>
+                    <form
+                        class="login100-form validate-form"
+                        id="file-upload-form"
+                    >
+                        <span class="login100-form-title"> CREATE QUIZ </span>
+                        <div class="button-row">
+                            <a href="identification.html" class="button-link">
+                                <div class="login100-pic login100-pic-2" data-tilt>
+                                    <img src="../register_UI/images/identification.png" alt="IMG" />
+                                    
+                                </div>
+                            </a>
+                            
+                            <a href="multiple_choice.html" class="button-link">
+                                <div class="login100-pic login100-pic-2" data-tilt>
+                                    <img src="../register_UI/images/multiplechoice.png" alt="IMG" />
+                                    
+                                </div>
+                            </a>
+                        </div>
+                        <div class="container-login100-form-btn thebutton" style="margin-right: 20px;">
+                                        <a
+                                            href="identification.html"
+                                            class="login100-form-btn"
+                                        style=" font-size: 20px; background-color: #DF75A5;">
+                                            Identification
+                                        </a>
+                        </div>
+                        <div class="container-login100-form-btn thebutton">
+                                        <a
+                                            href="multiple_choice.html"
+                                            class="login100-form-btn"
+                                         style=" font-size: 20px; background-color: #4A80AA;">
+                                            Multiple Choice
+                                        </a>
+                                    </div>
+                        <style>
+.button-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-link {
+    text-decoration: none;
+    color: #fff; /* Set text color to white */
+    text-align: center; /* Center-align text */
+}
+
+.login100-pic-2 {
+    max-width: 200px;
+    transition: transform 0.2s ease-out;
+}
+
+.login100-pic-2:hover {
+    transform: scale(1.3);
+}
+
+.thebutton{
+    display:none;
+}
+
+/* Media query to change text color and alignment on smaller screens */
+@media (max-width: 700px) {
+    .login100-pic-2 {
+        max-width: auto; /* Remove the maximum width on smaller screens */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .login100-pic-2 img {
+        display: none; /* Hide the images on smaller screens */
+    }
+
+    .thebutton{
+    display:block;
+    
+}
+
+    .text-link {
+        display: inline; /* Display the text links on smaller screens */
+        color: #000; /* Change text color to black on smaller screens */
+        text-align: center; /* Center-align text on smaller screens */
+        font-family: 'Lilita One', cursive;
+        font-size: 20px;
+
+    }
+}
+                        </style>
+                        <div class="container-login100-form-btn">
+                            <a
+                                href="../index_profile.html"
+                                class="login100-form-back-btn"
+                            >
+                                Back
+                            </a>
+                        </div>
+                        <div
+                            class="text-center p-t-136"
+                            style="margin-bottom: 50px"
+                        >
+                            <a
+                                class="txt2"
+                                href="https://play.google.com/store/games?hl=en&gl=US&pli=1"
+                            >
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        <script type="module">
+            import { firebaseConfig } from "/js/firebase-config.js";
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+            import {
+                getStorage,
+                ref as storageRef,
+                uploadBytes,
+            } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-storage.js";
+            import {
+                getDatabase,
+                ref,
+                get,
+                set,
+            } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
+            import { getCookie } from "/js/cookie-getter.js";
+
+            const app = initializeApp(firebaseConfig);
+            const database = getDatabase(app);
+            const storage = getStorage(app);
+
+            const form = document.getElementById("file-upload-form");
+            const fileInput = document.getElementById("file-input");
+            const uploadProgress = document.getElementById("upload-progress");
+            const progressBar = document.getElementById("progress-bar");
+            const uploadSuccess = document.getElementById("upload-success");
+
+            const uploadButton = document.querySelector(".login100-form-btn");
+            const overlay = document.getElementById("overlay");
+
+            async function checkAndUploadFile(file) {
+                const filename = file.name;
+                const lessonsRef = ref(database, "lessons");
+
+                try {
+                    const userDataString = getCookie("userData");
+                    if (userDataString) {
+                        const userData = JSON.parse(userDataString);
+                        const username = userData.username;
+
+                        const snapshot = await get(lessonsRef);
+                        const lessonsData = snapshot.val() || {};
+
+                        if (
+                            !Object.prototype.hasOwnProperty.call(
+                                lessonsData,
+                                username
+                            )
+                        ) {
+                            lessonsData[username] = [filename];
+                        } else {
+                            lessonsData[username].push(filename);
+                        }
+
+                        const storageReference = storageRef(
+                            storage,
+                            `lessons/${username}/${filename}`
+                        );
+                        const uploadTask = uploadBytes(storageReference, file);
+
+                        await uploadTask;
+
+                        // Hide the overlay after the upload is complete
+                        overlay.style.display = "none";
+                        uploadSuccess.style.display = "block";
+                        setTimeout(function () {
+                            window.location.href = "../index_lesson.html";
+                        }, 500); // 500 milliseconds = 0.5 seconds
+
+                        // Update the lessons data in the database with the new filename
+                        set(lessonsRef, lessonsData);
+                        location.href = window.location.href;
+                    } else {
+                        console.log("Cookie not found");
+                        overlay.style.display = "none";
+                    }
+                } catch (error) {
+                    console.error(
+                        "Error checking or uploading the file:",
+                        error
+                    );
+                    overlay.style.display = "none";
+                }
+            }
+        </script>
+
+        <script>
+            var loader = document.getElementById("preloader");
+
+            window.addEventListener("load", function () {
+                loader.style.display = "none";
+            });
+        </script>
+    </body>
+</html>
