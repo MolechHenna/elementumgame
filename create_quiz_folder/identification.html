@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Create Identification Quiz</title>
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        />
+        <link rel="icon" href="../images/Elementum-logo.png" />
+        <link rel="stylesheet" type="text/css" href="../register_UI/css/util.css" />
+        <link rel="stylesheet" type="text/css" href="../register_UI/css/main.css" />
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="../register_UI/vendor/bootstrap/css/bootstrap.min.css"
+        />
+        <!--===============================================================================================-->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="../register_UI/fonts/font-awesome-4.7.0/css/font-awesome.min.css"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Lilita+One&display=swap"
+            rel="stylesheet"
+        />
+        <!--===============================================================================================-->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="../register_UI/vendor/animate/animate.css"
+        />
+        <!--===============================================================================================-->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="../register_UI/vendor/css-hamburgers/hamburgers.min.css"
+        />
+        <!--===============================================================================================-->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="../register_UI/vendor/select2/select2.min.css"
+        />
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="../register_UI/css/util.css" />
+        <link rel="stylesheet" type="text/css" href="../register_UI/css/main.css" />
+        <!--===============================================================================================-->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </head>
+
+    <body>
+        <div id="preloader"></div>
+        <div class="limiter">
+            <style>
+                
+                    .imageneoheight{
+                        height: 200px;
+                    }
+                    @media (max-width: 800px) {
+                        .wrap-login100 {
+                            padding-top: 40px;
+                            }
+                        .p-t-136{
+                            padding-top: 0;
+                            }  
+                        .login100-form-title {
+                              padding-bottom: 20px;
+                              font-size: 20px;
+                        }
+                        .imageneoheight{
+                        height: 100px;
+                    }
+                    }
+                    
+                    .button-container {
+                                display: flex; /* Display buttons in a row */
+                                justify-content: space-around; /* Center buttons horizontally with space between them */
+                                align-items: center; /* Center buttons vertically */
+                            }
+
+                            .button-container button {
+                                text-align: center; /* Center the text within the button */
+                                white-space: nowrap; /* Prevent text from wrapping */
+                                padding: 10px 20px; /* Adjust padding to your liking */
+                                margin-right: 7px;
+                                border-radius: 20px;
+                                font-family: 'lilita one', cursive;
+                            }
+                </style>
+            <div class="container-login100">
+                <div class="wrap-login100" style="  border: 10px solid rgb(0, 0, 0);
+  border-bottom: 20px solid rgb(0, 0, 0); border-radius: 50px; padding-top: 20px; padding-left: 30px; padding-right: 30px;">
+                <div class="button-container" style="align-items: left;">
+                            
+                            <button
+                                id="back-button"
+                                class="btn btn-danger" style="border-radius: 50px;"
+                            >
+                                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    <div class="container">
+                        
+                        <img
+                            class="mx-auto d-block imageneoheight"
+                            src="../register_UI/images/identification.png"
+                            alt="IMG"
+                        />
+                        <h1 class="login100-form-title">
+                            Create Identification Quiz
+                        </h1>
+                        
+                        <br>
+                        <select id="add-question-select" class="btn btn-primary container-login100-form-btn" style="border-radius: 50px; padding-top: 10px;">
+                                <option value="0" disabled selected>Select quantity</option>
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                                <option value="15">15</option>
+                                <option value="20">20</option>
+                                <option value="25">25</option>
+                                <option value="30">30</option>
+                                <option value="35">35</option>
+                                <option value="40">40</option>
+                                <option value="45">45</option>
+                                <option value="50">50</option>
+                            </select>
+                        <br>
+                        <div class="wrap-input100">
+                            <label for="quiz-duration">Quiz Duration:</label>
+
+                            <select
+                                class="form-control input100"
+                                id="quiz-duration"
+                            >
+                                <option value="300">5 minutes</option>
+                                <option value="600">10 minutes</option>
+                                <option value="1200">20 minutes</option>
+                                <option value="1800">30 minutes</option>
+                                <option value="2400">40 minutes</option>
+                                <option value="3000">50 minutes</option>
+                                <option value="3600">60 minutes</option>
+                            </select>
+                        </div>
+                        <div id="quiz-container">
+                            <!-- Quiz items will be added here -->
+                        </div>
+                        <div class="button-container">
+                            
+                            <button
+                                id="submit-quiz"
+                                class="btn btn-success container-login100-form-btn" style="margin: auto;"
+                            >
+                                <i class="fa fa-paper-plane" aria-hidden="true"></i> SUBMIT
+                            </button>
+                            <br>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="module">
+        import { firebaseConfig } from "/js/firebase-config.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+        import {
+            getDatabase,
+            ref,
+            push,
+            set,
+            child
+        } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
+        import { getCookie } from "/js/cookie-getter.js";
+
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        const quizDuration = Number(
+            document.getElementById("quiz-duration").value
+        );
+
+      document.getElementById("add-question-select").addEventListener("change", function () {
+    const selectedValue = parseInt(this.value);
+    generateQuizItems(selectedValue);
+});
+
+let inputFieldValues = {}; // Declare an object to store input field values
+let quizCounter = 0; // Initialize quizCounter
+
+function generateQuizItems(quantity) {
+    const quizContainer = document.getElementById("quiz-container");
+    
+    // Store the current values of input fields before clearing the container
+    for (let i = 1; i <= quizCounter; i++) {
+        const questionValue = document.getElementById(`question${i}`).value;
+        const answerValue = document.getElementById(`answer${i}`).value;
+        inputFieldValues[i] = { question: questionValue, answer: answerValue };
+    }
+
+    quizCounter = quantity; // Update quizCounter
+
+    quizContainer.innerHTML = ""; // Clear existing items
+
+    for (let i = 1; i <= quantity; i++) {
+        const questionDiv = document.createElement("div");
+        questionDiv.classList.add("form-group");
+
+        const storedValues = inputFieldValues[i] || { question: '', answer: '' };
+
+        questionDiv.innerHTML = `
+            <label for="question${i}">Question ${i}:</label>
+            <input style="margin-bottom: 5px" type="text" class="form-control input100" id="question${i}" placeholder="Enter question" value="${storedValues.question}">
+            <input type="text" class="form-control input100" id="answer${i}" placeholder="Enter answer" value="${storedValues.answer}">
+            <hr>
+        `;
+
+        quizContainer.appendChild(questionDiv);
+    }
+}
+
+// Initial call with the default value
+generateQuizItems(parseInt(document.getElementById("add-question-select").value));
+
+// Initial call with the default value
+generateQuizItems(parseInt(document.getElementById("add-question-select").value));
+
+        document
+            .getElementById("back-button")
+            .addEventListener("click", backbutton);
+        function backbutton() {
+            window.location.href = "quiz.html";
+        }
+document.getElementById("submit-quiz").addEventListener("click", function () {
+        const selectedQuantity = parseInt(document.getElementById("add-question-select").value);
+    const quizDuration = Number(document.getElementById("quiz-duration").value);
+    // Generate a random alphanumeric quizCode with 10 characters
+    const quizCode = generateRandomCode(10);
+
+    // Check if the selected quantity is 0
+    if (selectedQuantity === 0) {
+        Swal.fire({
+            title: "Error",
+            text: "Please select a valid quantity of questions before submitting the quiz.",
+            icon: "error",
+            confirmButtonText: "OK",
+        });
+        return; // Prevent further execution of the code
+    }
+
+    let areQuestionsValid = true;
+
+    for (let i = 1; i <= selectedQuantity; i++) {
+        const question = document.getElementById(`question${i}`).value.trim();
+        const answer = document.getElementById(`answer${i}`).value.trim();
+
+        if (question === '' || answer === '') {
+            areQuestionsValid = false;
+            break; // Exit the loop as soon as an empty question or answer is found
+        }
+    }
+
+    if (!areQuestionsValid) {
+        Swal.fire({
+            title: "Error",
+            text: "Please fill in all question and answer fields before submitting.",
+            icon: "error",
+            confirmButtonText: "OK",
+        });
+        return; // Prevent further execution of the code
+    }
+
+    Swal.fire({
+        title: "Submit Quiz",
+        text: "Are you sure you want to submit the quiz? Keep in mind that once submitted, you won't be able to add or remove questions and adjust the duration. However, you can still update the existing questions later on.",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "OK",
+        cancelButtonText: "Cancel",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            const quizData = {};
+            const userDataString = getCookie("userData");
+            const userData = JSON.parse(userDataString);
+            const username = userData.username;
+
+            for (let i = 1; i <= selectedQuantity; i++) {
+                const question = document.getElementById(`question${i}`).value;
+                const answer = document.getElementById(`answer${i}`).value;
+
+                if (question && answer) {
+                    quizData[i] = {
+                        question,
+                        answer,
+                    };
+                }
+            }
+
+            const userQuizRef = ref(database, `Gamemodes/identification_quiz/${username}`);
+
+            // Decide whether to use user-provided quiz code or let Firebase generate one
+            const quizRef = quizCode ? child(userQuizRef, quizCode) : push(userQuizRef);
+
+            // Include quiz duration as a number
+            set(quizRef, {
+                duration: quizDuration,
+                ...quizData,
+            }).then(() => {
+                // Get the Firebase-generated ID from the quizRef
+                const quizID = quizRef.key;
+
+                // Reset the quizCounter and clear the input fields
+                quizCounter = 0;
+                document.getElementById("quiz-container").innerHTML = "";
+                document.getElementById("quiz-duration").value = "";
+
+                // Show a success popup with the ID
+                Swal.fire({
+                    title: "Success!",
+                    text: `Quiz has been successfully added with ID: ${quizID}`,
+                    icon: "success",
+                    confirmButtonText: "OK",
+                });
+            }).catch((error) => {
+                // Handle errors here
+                console.error("Error adding data to the database:", error);
+            });
+        }
+    });
+});
+
+// Function to generate a random alphanumeric code
+function generateRandomCode(length) {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    for (let i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return result;
+}
+    </script>
+    <script>
+        var loader = document.getElementById("preloader");
+
+        window.addEventListener("load", function () {
+            loader.style.display = "none";
+        });
+    </script>
+    </body>
+
+    
+</html>

@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+<meta name="google-adsense-account" content="ca-pub-7801318214806091">
+    <title>Elementum/Experiments</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap"
+        rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="css/templatemo-topic-listing.css" rel="stylesheet">
+
+    <link rel="icon" href="images/Elementum-logo.png">
+
+    <!--FONT GOOGLE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Lilita+One&display=swap" rel="stylesheet">
+    <link href="css/templatemo-topic-listing1.css" rel="stylesheet">
+    <link rel="stylesheet" href="neostyle.css">
+</head>
+
+<body id="top">
+
+    <div id="preloader">
+            <div class="wrapper">
+        <div class="box-wrap">
+            <div class="box one"></div>
+            <div class="box two"></div>
+            <div class="box three"></div>
+            <div class="box four"></div>
+            <div class="box five"></div>
+            <div class="box six"></div>
+        </div>
+    </div>
+    </div>
+      <style>
+    
+    @media (max-width: 700px) {
+                            blockquote {
+                                font-size: 20px; /* Adjust the font size for smaller screens */
+                                margin: 15px; /* Adjust the margin for smaller screens */
+                                padding: 20px; /* Adjust the padding for smaller screens */
+                            }
+                            .custom-block-image {
+                                width: 50%;
+                                height: 50%;
+                                margin-top: 10px;
+                                margin: auto;
+                            }
+                            p{
+                                font-size: 15px;
+                                line-height: 1.4;
+                                text-align: justify;
+                                font-weight: normal;
+                            }
+                            
+                            .text-white{
+                                font-weight: normal;
+                                line-height: normal;
+
+                            }
+                            
+                            .site-header{
+                                padding-bottom: 20px;
+                            }
+                            
+                            .list-progress, .icon-holder, .icon-holder::before, .icon-holder i{
+                                position: relative;
+                                height: 0%;
+                                width: 0%;
+                                z-index: -5;
+                                background-color: rgba(255,0,0,0);
+                                opacity: 0;
+                                display: none;
+                                padding: 0;
+                            }
+                            
+                            .timeline-container .vertical-scrollable-timeline li {
+                              padding: 0px;
+                            }
+                            
+                            .topics-detail-block-image{
+                                height: 200px;
+                                margin: auto;
+                                margin-bottom: 20px;
+                            }
+                            
+                            .topics-detail-block-image-2{
+                                height: 200px;
+                                margin: auto;                                
+                            }
+                            
+                            #demo{
+                                display: none;
+                            }
+    }
+</style>
+    <main>
+
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/Full-logo.png" alt="Topic Image"
+                        style="max-width: 200px; max-height: 90px; filter: drop-shadow(1px 2px 1px black)">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-lg-5 me-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html">HOME</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#topics-detail">LEARN</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#tutorial_section3">TUTORIAL</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#demo">DEMO <span style="font-size: 20px;">(Desktop Only)</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#section_5" id="navbarLightDropdownMenuLink"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">PROFILE</a>
+
+                            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                                <li id="profilelog" style="display: none"><a class="dropdown-item"
+                                        href="index_profile.html">Account</a></li>
+
+                                <li id="loginItem" style="display: none"><a class="dropdown-item"
+                                        href="register_UI/index.html">Log-in</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+
+        <header
+            class="site-header d-flex flex-column justify-content-center align-items-center hero-section d-flex justify-content-center align-items-center">
+            <div class="container">
+                <div class="row justify-content-center align-items-center">
+
+                    <div class="col-lg-5 col-12 mb-5">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Homepage</a></li>
+
+                                <li class="breadcrumb-item active" aria-current="page">Experiments</li>
+                            </ol>
+                        </nav>
+
+                        <h2 class="text-white" style="  text-shadow:
+                                                                        -4px -4px 0 #000,
+                                                                         0   -4px 0 #000,
+                                                                         4px -4px 0 #000,
+                                                                         4px  0   0 #000,
+                                                                         4px  4px 0 #000,
+                                                                         0    4px 0 #000,
+                                                                        -4px  4px 0 #000,
+                                                                        -4px  0   0 #000;">Experiments</h2>
+                    </div>
+
+                    <div class="col-lg-5 col-12">
+                        <div class="topics-detail-block-2">
+                            <img src="images/chemical_experiment.png" class="topics-detail-block-image-2 img-fluid">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+
+        <section class="topics-detail-section section-padding" id="topics-detail">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-8 col-12 m-auto">
+                        <h3 class="mb-4">Experiment and discover</h3>
+
+                        <p>Discover many compounds by combining two different elements. The possibilities are endless,
+                            as long as it exists.</p>
+
+                        <blockquote>
+                            Discover countless compounds that can be created from basic elements.
+                        </blockquote>
+
+                    </div>
+                </div>
+                </div>
+        </section>
+        <section class="timeline-section section-padding" id="tutorial_section3">
+            <div class="section-overlay"></div>
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-12 text-center">
+                        <h1 class="text-white mb-4">How does it work?</h1>
+                    </div>
+
+                    <div class="col-lg-10 col-12 mx-auto">
+                        <div class="timeline-container">
+                            <ul class="vertical-scrollable-timeline" id="vertical-scrollable-timeline">
+                                <div class="list-progress">
+                                    <div class="inner"></div>
+                                </div>
+
+                                <li>
+                                    <h4 class="text-white mb-3">Choose two elements</h4>
+
+                                    <p class="text-white">Choose any two unique elements from the periodic element
+                                        and you will see those element inside the mixing flask.
+                                    </p>
+                                    <div class="row">
+                                        <div class="col-lg-3 mx-auto">
+                                            <img src="images/experiments.png"
+                                                class="topics-detail-block-image img-fluid">
+                                        </div>
+                                    </div>
+                                    <div class="icon-holder">
+                                        <i class="bi-hand-index"></i>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <h4 class="text-white mb-3">Create compounds</h4>
+
+                                    <p class="text-white">By clicking mix, you will see all of the possible compounds
+                                        that can be created with those two elements.
+                                    </p>
+                                    <div class="row">
+                                        <div class="col-lg-3 mx-auto">
+                                            <img src="images/experiments_compounds.png"
+                                                class="topics-detail-block-image img-fluid">
+                                        </div>
+                                    </div>
+                                    <div class="icon-holder">
+                                        <i class="bi-align-bottom"></i>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <h4 class="text-white mb-3">See compound Information</h4>
+
+                                    <p class="text-white">By clicking one of the compounds created, you can see
+                                        information regarding that
+                                        compound.
+                                    </p>
+                                    <div class="row">
+                                        <div class="col-lg-3 mx-auto">
+                                            <img src="images/experiments_information.png"
+                                                class="topics-detail-block-image img-fluid">
+                                        </div>
+                                    </div>
+                                    <div class="icon-holder">
+                                        <i class="bi-app-indicator"></i>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="topics-detail-section section-padding" id="demo">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-12 m-auto">
+                        <blockquote>
+                            Experimentation Demo, see more about this feature in our Elementum App
+                        </blockquote>
+                        <div class="drag-drop-container col-lg-3 mx-auto">
+                            <div class="empty-square" id="square1">
+                                <div class="clear-button" id="clearSquare1" onclick="clearSquare('square1')"></div>
+                            </div>
+                            <div class="plus-sign">+</div>
+                            <div class="empty-square" id="square2">
+                                <div class="clear-button" id="clearSquare2" onclick="clearSquare('square2')"></div>
+                            </div>
+                            <div class="equal-sign">=</div>
+                            <div class="result-popup" id="resultPopup" style="display:none">
+                                <div class="result-cell" id="result1" data-message="H2O">H2O</div>
+                                <div class="result-cell" id="result2" data-message="H2O2">H2O2</div>
+                                <div class="result-cell" id="result3" data-message="OH">OH</div>
+                                <div class="result-cell" id="result4" data-message="H2O2-H2">H2O2-H2</div>
+                            </div>
+                        </div>
+                            <img class="img2" src="images/hydrogen.png" id="hydrogen" draggable="true">
+                            <img class="img2" src="images/oxygen.png" id="oxygen" draggable="true">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <style>
+            .drag-drop-container {
+                display: flex;
+                align-items: center;
+                margin-top: 20px;
+            }
+
+            .empty-square {
+                width: 100px;
+                height: 100px;
+                border: 2px dashed #000;
+                background-color: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .plus-sign,
+            .equal-sign {
+                width: 30px;
+                text-align: center;
+                font-size: 24px;
+                margin: 0 10px;
+            }
+
+            .result-popup {
+                display: flex;
+                flex-direction: column;
+                padding: 10px;
+                border-radius: 5px;
+            }
+
+            .result-cell {
+                color: white;
+                font-family: 'lilita one', cursive;
+                font-size: 20px;
+                width: 100px;
+                height: 100px;
+                margin-bottom: 3px;
+                border: 12px solid #000;
+                border-radius: 10px;
+                background-color: #2b73de;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .image-container2 {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 20px;
+            }
+
+            .img2 {
+                width: 100px;
+                height: 100px;
+            }
+        </style>
+        <script>
+            // Create variables to keep track of whether each image is in its square
+            let hydrogenInSquare = false;
+            let oxygenInSquare = false;
+
+            // Get the clear buttons
+            const clearSquare1Button = document.getElementById('clearSquare1');
+            const clearSquare2Button = document.getElementById('clearSquare2');
+
+            // Add event listeners for drag and drop
+            hydrogen.addEventListener('dragstart', dragStart);
+            oxygen.addEventListener('dragstart', dragStart);
+            square1.addEventListener('dragover', dragOver);
+            square1.addEventListener('dragenter', dragEnter);
+            square1.addEventListener('dragleave', dragLeave);
+            square1.addEventListener('drop', drop);
+            square2.addEventListener('dragover', dragOver);
+            square2.addEventListener('dragenter', dragEnter);
+            square2.addEventListener('dragleave', dragLeave);
+            square2.addEventListener('drop', drop);
+
+            clearSquare1Button.addEventListener('click', () => clearSquare('square1'));
+            clearSquare2Button.addEventListener('click', () => clearSquare('square2'));
+
+            function dragStart(e) {
+                e.dataTransfer.setData('text', e.target.id);
+            }
+
+            function dragOver(e) {
+                e.preventDefault();
+            }
+
+            function dragEnter(e) {
+                e.preventDefault();
+                this.classList.add('hovered');
+            }
+
+            function dragLeave() {
+                this.classList.remove('hovered');
+            }
+
+            function drop(e) {
+                e.preventDefault();
+                this.classList.remove('hovered');
+                const data = e.dataTransfer.getData('text');
+                this.appendChild(document.getElementById(data));
+
+                // Check which element was dropped and update the corresponding variable
+                if (data === 'hydrogen') {
+                    hydrogenInSquare = true;
+                } else if (data === 'oxygen') {
+                    oxygenInSquare = true;
+                }
+
+                // Check if both images are in their squares before showing the result
+                if (hydrogenInSquare && oxygenInSquare) {
+                    showResult();
+                }
+            }
+
+            function showResult() {
+                // Display the result popup with the desired text
+                resultPopup.style.display = 'block';
+            }
+
+            function clearSquare(squareId) {
+                // Clear the square and update the corresponding variable
+                const square = document.getElementById(squareId);
+                square.innerHTML = '';
+                if (squareId === 'square1') {
+                    hydrogenInSquare = false;
+                } else if (squareId === 'square2') {
+                    oxygenInSquare = false;
+                }
+
+                // Hide the result when an element is removed
+                resultPopup.style.display = 'none';
+            }
+
+            // Add event listeners for result cells to show a SweetAlert2 pop-up
+            document.getElementById('result1').addEventListener('click', () => showSweetAlert('H2O'));
+            document.getElementById('result2').addEventListener('click', () => showSweetAlert('H2O2'));
+            document.getElementById('result3').addEventListener('click', () => showSweetAlert('OH'));
+            document.getElementById('result4').addEventListener('click', () => showSweetAlert('H2O2-H2'));
+
+            function showSweetAlert(message) {
+                Swal.fire({
+                    title: 'Information',
+                    text: `See the information in our app for ${message}`,
+                    icon: 'info',
+                    confirmButtonText: 'OK'
+                });
+            }
+        </script>
+    </main>
+
+    <footer class="site-footer section-padding">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-3 col-12 mb-4 pb-2">
+                    <a class="navbar-brand mb-2" href="index.html">
+                        <img src="images/Full-logo.png" alt="Topic Image"
+                            style="max-width: 210px; max-height: 100px; filter: drop-shadow(1px 2px 1px black)">
+                    </a>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-12 mt-4 mt-lg-0 ms-auto">
+
+                    <p class="copyright-text mt-lg-5 mt-4">Copyright © 2024 Elementum
+                        <br><br>
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FILES -->
+    <script type="module" src="js/signout1.js"></script>
+    <script type="module" src="js/firebase-observer.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/custom.js"></script>
+
+    <script>
+        var loader = document.getElementById("preloader");
+
+        window.addEventListener("load", function () {
+            loader.style.display = "none";
+        })
+
+    </script>
+</body>
+
+</html>
